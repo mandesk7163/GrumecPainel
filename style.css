@@ -1,15 +1,49 @@
 
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #0f0;
+  background-color: #000;
+  color: #f00;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+}
+
+#terminal {
+  padding: 40px;
+  font-size: 18px;
+}
+
+.prompt {
+  white-space: nowrap;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { color: transparent }
+  50% { color: red; }
+}
+
+#dashboard {
   padding: 20px;
 }
+
+.hidden {
+  display: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
 button {
-  background: #222;
-  color: #0f0;
-  border: 1px solid #0f0;
+  background: #111;
+  border: 1px solid #f00;
+  color: #f00;
   padding: 10px;
-  margin: 5px;
   cursor: pointer;
 }
