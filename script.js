@@ -1,24 +1,28 @@
 
-const typeText = "Grumec";
+const typeText = "grumec && acesso";
 let i = 0;
 
 function typeTerminal() {
   if (i < typeText.length) {
     document.getElementById("typed").innerText += typeText[i];
     i++;
-    setTimeout(typeTerminal, 300);
+    setTimeout(typeTerminal, 200);
   } else {
     setTimeout(() => {
       document.getElementById("terminal").style.display = 'none';
-      document.getElementById("dashboard").classList.remove("hidden");
-    }, 800);
+      document.getElementById("eye-container").classList.remove("hidden");
+      setTimeout(() => {
+        document.getElementById("eye-container").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+      }, 2000);
+    }, 500);
   }
 }
 
 window.onload = typeTerminal;
 
 async function consultarBIN() {
-  const bin = prompt("Digite os 6 dígitos do BIN:");
+  const bin = prompt("Digite BIN:");
   const res = await fetch(`https://lookup.binlist.net/${bin}`);
   const data = await res.json();
   mostrar(data);
@@ -75,4 +79,4 @@ function lerMetadados(input) {
 
 function mostrar(data) {
   document.getElementById("output").innerText = JSON.stringify(data, null, 2);
-  }
+}
