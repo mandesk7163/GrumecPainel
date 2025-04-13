@@ -2,20 +2,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grumeccnslt</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Grumeccnslt - Terminal Hack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Grumeccnslt - Painel OSINT</h1>
-  <ul>
-    <li><button onclick="consultarBIN()">Consultar BIN</button></li>
-    <li><button onclick="gerarCPF()">Gerar CPF</button></li>
-    <li><button onclick="consultarCVE()">Buscar CVE</button></li>
-    <li><button onclick="gerarPessoa()">Gerar Pessoa</button></li>
-  </ul>
-  <div id="resultado"></div>
+  <div id="terminal">
+    <p class="prompt">root@grumeccnslt:~# <span id="typed"></span><span class="cursor">|</span></p>
+  </div>
+
+  <div id="dashboard" class="hidden">
+    <h1>Grumeccnslt Dashboard</h1>
+    <div class="grid">
+      <button onclick="consultarBIN()">Consulta BIN</button>
+      <button onclick="gerarCPF()">Gerar CPF</button>
+      <button onclick="consultarCVE()">Buscar CVE</button>
+      <button onclick="gerarPessoa()">Gerar Pessoa</button>
+      <button onclick="consultarCEP()">Consulta CEP</button>
+      <button onclick="consultarIP()">Consulta IP</button>
+      <button onclick="metaDados()">Ler Metadados</button>
+    </div>
+    <pre id="output"></pre>
+  </div>
+
+  <input type="file" id="imagem" class="hidden" onchange="lerMetadados(this)">
   <script src="script.js"></script>
 </body>
 </html>
