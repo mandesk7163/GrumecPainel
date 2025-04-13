@@ -2,28 +2,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Grumeccnslt - Terminal Hack</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GRUMEC ABCESS</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="terminal">
-    <p class="prompt">root@grumeccnslt:~# <span id="typed"></span><span class="cursor">|</span></p>
+    <p class="prompt">root@grumec:~# <span id="typed"></span><span class="cursor">|</span></p>
+  </div>
+
+  <div id="eye-container" class="hidden">
+    <div id="eye">
+      <span class="bin">010101000110100001001011010</span>
+    </div>
   </div>
 
   <div id="dashboard" class="hidden">
-    <h1>Grumeccnslt Dashboard</h1>
+    <h1>GRUMEC ABCESS</h1>
     <div class="grid">
-      <button onclick="consultarBIN()">Consulta BIN</button>
-      <button onclick="gerarCPF()">Gerar CPF</button>
-      <button onclick="consultarCVE()">Buscar CVE</button>
-      <button onclick="gerarPessoa()">Gerar Pessoa</button>
-      <button onclick="consultarCEP()">Consulta CEP</button>
-      <button onclick="consultarIP()">Consulta IP</button>
-      <button onclick="metaDados()">Ler Metadados</button>
+      <button onclick="consultarBIN()">BIN</button>
+      <button onclick="gerarCPF()">CPF</button>
+      <button onclick="consultarCVE()">CVE</button>
+      <button onclick="gerarPessoa()">Pessoa</button>
+      <button onclick="consultarCEP()">CEP</button>
+      <button onclick="consultarIP()">IP</button>
+      <button onclick="metaDados()">Metadados</button>
     </div>
     <pre id="output"></pre>
+    <footer>MADE BY STOP</footer>
   </div>
 
   <input type="file" id="imagem" class="hidden" onchange="lerMetadados(this)">
